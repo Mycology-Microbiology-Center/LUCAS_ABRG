@@ -1,0 +1,54 @@
+# Singularity definition file: R environment + marginaeffects
+
+Bootstrap: docker
+From: rocker/r-ver:4.3.1
+
+%labels
+  Maintainer vladimir.mikryukov@ut.ee
+  R_Version 4.3.1
+
+%runscript
+  exec "$@"
+
+%apprun R
+  exec R "${@}"
+
+%apprun Rscript
+  exec Rscript "${@}"
+
+## Install the required dependencies
+%post
+  export R_VERSION=4.3.1
+
+  apt-get update -qq \
+  && apt-get -y --no-install-recommends install \
+    zip unzip locales \
+    curl git wget less \
+    build-essential
+
+  ## Configure default locale
+  # echo "C.UTF-8" >> /etc/locale.gen
+  # locale-gen C.UTF-8
+  /usr/sbin/update-locale LANG=C.UTF-8
+  export LC_ALL=C.UTF-8
+  export LANG=C.UTF-8
+
+  ## Install tidyverse packages along with arrow and data.table
+  /rocker_scripts/install_tidyverse.sh \
+    && apt-get autoremove -y \
+    && apt-get autoclean -y \
+    && rm -rf /var/lib/apt/lists/*
+
+  ## Install additional R packages
+  install2.r --error --skipinstalled --ncpus -1 \
+    optparse \
+    plyr \
+    mgcv \
+    marginaleffects \
+    effectsize \
+    future.apply \
+    openxlsx \
+    && rm -rf /tmp/downloaded_packages/
+
+%test
+  R --quiet -e "stopifnot(getRversion() == '${R_VERSION}')"
