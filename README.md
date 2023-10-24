@@ -9,3 +9,12 @@ Distribution of sampling sites across environments:
 <p align="middle">
   <img src="images/sampling_map.jpg" width="600" title="Dataset"/>
 </p>
+
+
+## Repository structure
+
+- **Main directory**: contains the [Snakemake](https://snakemake.readthedocs.io/en/stable/) workflow files and R-scripts  
+- **`scripts` subdirectory**: contains auxiliary scripts utilized in the workflow  
+- **`envs` subdirectory**: holds the specifications for [conda](https://docs.conda.io/en/latest/) environments  
+- **`Singularity_Containers` subdirectory**: stores the [Singularity](https://sylabs.io/singularity/) container definition files  
+
