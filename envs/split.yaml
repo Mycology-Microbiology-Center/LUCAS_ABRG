@@ -1,0 +1,6 @@
+channels:
+ - bioconda
+ - conda-forge
+dependencies:
+ - bbmap >= 38.87
+ - seqkit >= 0.15.0
