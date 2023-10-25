@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/708775478.svg)](https://zenodo.org/doi/10.5281/zenodo.10039980)
+
 # A trait-based approach unveils mechanisms shaping antibiotic-related microbial genetic machinery across European soils <img src='images/MMC_logo.png' align="right" height="100" />
 
 This repository houses the source code related to the study of antibiotic synthesis and resistance genes, obtained using high-throughput sequencing to analyze environmental DNA from 658 metagenomic samples of topsoil, collected from various regions across Europe.  
@@ -24,5 +26,6 @@ Distribution of sampling sites across environments:
 ## Citation
 
 Dulya O, Mikryukov V, Shchepkin DV, Pent M, Tamm H, Guazzini M, Panagos P, Jones A, Orgiazzi A, Marroni F, Bahram M, Tedersoo L. (2023) 
-A trait-based approach unveils mechanisms shaping antibiotic-related microbial genetic machinery across European soils.
+A trait-based approach unveils mechanisms shaping antibiotic-related microbial genetic machinery across European soils // [DOI:10.5281/zenodo.10039980](https://zenodo.org/doi/10.5281/zenodo.10039980)
+
 
