@@ -1,0 +1,6 @@
+channels:
+ - bioconda
+ - conda-forge
+dependencies:
+ - metaxa >= 2.2.3
+ - blast >= 2.2.31
